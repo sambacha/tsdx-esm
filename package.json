@@ -1,6 +1,6 @@
 {
-  "name": "tsdx2",
-  "version": "0.14.1",
+  "name": "tsdx-esm",
+  "version": "0.15.0",
   "author": "Jared Palmer <jared@palmer.net>",
   "description": "Zero-config TypeScript package development",
   "license": "MIT",
