@@ -1,3 +1,43 @@
+# tsdx fork
+
+
+```
+npm i -g @useweb3/tsdx@0.15.0
+```
+```
+$ tsdx2
+```
+
+> ### Changes
+> * Full ESM-CJS interop: `.cjs`/`.mjs` extensions, `"module"`/`"main"` fields, `"exports"` field. Ex:
+>   ```
+>   "main": "./dist/index.cjs",
+>   "module": "./dist/index.mjs",
+>   "exports": {
+>     "./package.json": "./package.json",
+>     ".": {
+>       "import": "./dist/index.mjs",
+>       "require": "./dist/index.cjs"
+>     }
+>   },
+>   ```
+> * Emits ES2020, Terser minification for ESM by default
+> * ES5 output now deprecated behind `build --legacy` flag
+> * Pass `--passWithNoTests` to Jest by default with `tsdx test`
+> * Package upgrades
+> 
+> ### Reasoning
+> * Smallest possible bundle sizes due to minimal transpilation
+> * Maximum ESM/CJS interop for Node 14+
+> * ESNext output and ESM/CJS interop changes leave all transpilation to lower featuresets up to library consumers downstream in order to minimize problems at compile-time, and prevent TSDX from enforcing a maximum featureset on consumers (previously, this was ES5).
+>   Inspired by module resolution issues with React Native's Metro importing TSDX modules. Also results in much smaller bundles, especially now that ESM is Terser'd by default.
+
+
+> source , https://github.com/jaredpalmer/tsdx/pull/1059
+
+
+
+
 ![tsdx](https://user-images.githubusercontent.com/4060187/56918426-fc747600-6a8b-11e9-806d-2da0b49e89e4.png)
 
 [![Blazing Fast](https://badgen.now.sh/badge/speed/blazing%20%F0%9F%94%A5/green)](https://npm.im/tsdx) [![Blazing Fast](https://badgen.now.sh/badge/speed/blazing%20%F0%9F%94%A5/green)](https://npm.im/tsdx) [![Blazing Fast](https://badgen.now.sh/badge/speed/blazing%20%F0%9F%94%A5/green)](https://npm.im/tsdx) [![Discord](https://img.shields.io/discord/769256827007139912.svg?style=flat-square)](https://discord.gg/pJSg287)
